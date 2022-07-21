@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="imageButtonBiometric">35dip</dimen>
+    <dimen name="m40">40dip</dimen>
+    <dimen name="m38">38dip</dimen>
+    <dimen name="avatar_width">100dip</dimen>
+    <dimen name="avatar_height">100dip</dimen>
+    <dimen name="biometric_fast_width">150dip</dimen>
+    <dimen name="biometric_padding">3dip</dimen>
+    <dimen name="icon_dimen">24dp</dimen>
+</resources>

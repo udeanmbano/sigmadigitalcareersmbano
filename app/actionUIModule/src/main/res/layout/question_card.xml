@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/m4"
+    android:layout_marginBottom="@dimen/m4"
+    android:layout_marginStart="@dimen/m16"
+    android:layout_marginEnd="@dimen/m16">
+
+    <com.furkanakdemir.surroundcardview.SurroundCardView
+        android:id="@+id/questionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/qcardCornerRadius"
+        app:scv_color="@color/qcardStroke"
+        app:scv_width="@dimen/qcardStrokeWidth">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/m16">
+
+            <ImageView
+                android:id="@+id/questionNumber"
+                android:layout_width="@dimen/qcardNumberBg"
+                android:layout_height="@dimen/qcardNumberBg"
+                android:src="@drawable/question_number_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionNumberValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="1"
+                app:layout_constraintBottom_toBottomOf="@+id/questionNumber"
+                app:layout_constraintEnd_toEndOf="@+id/questionNumber"
+                app:layout_constraintStart_toStartOf="@+id/questionNumber"
+                app:layout_constraintTop_toTopOf="@+id/questionNumber" />
+
+            <TextView
+                android:id="@+id/questionTitle"
+                android:layout_width="@dimen/match_constraints"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/m16"
+                android:layout_marginEnd="@dimen/m4"
+                android:paddingTop="@dimen/p2"
+                tools:text="Are you a US person?"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/questionNumber"
+                app:layout_constraintTop_toTopOf="@+id/questionNumber"/>
+
+            <LinearLayout
+                android:id="@+id/responseControlContainer"
+                android:layout_width="@dimen/match_constraints"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/questionTitle"
+                app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.furkanakdemir.surroundcardview.SurroundCardView>
+
+</FrameLayout>
+

@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 32
+        buildConfigField("String", "ApiBaseURL", "\"https://us-central1-dazn-sandbox.cloudfunctions.net\"")
+        buildConfigField("boolean", "LogNetwork", "true")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+
+            //Set development api base url
+            buildConfigField("String", "ApiBaseURL", "\"https://us-central1-dazn-sandbox.cloudfunctions.net/\"")
+            //Enable network logging
+            buildConfigField("boolean", "LogNetwork", "true")
+         }
+        release {
+            //Set development api base url
+            buildConfigField("String", "ApiBaseURL", "\"https://us-central1-dazn-sandbox.cloudfunctions.net\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    //--------------------DEP VERSIONS--------------------
+
+//  <<<<<<<<<<<<<<<<<<<<Core>>>>>>>>>>>>>>>>>>>>
+
+    // AndroidX
+    def lifecycleComponents = "2.4.1"
+
+    // Coroutines
+    def coroutineComponents = "1.6.0"
+
+//  <<<<<<<<<<<<<<<<<<<<Data Storage>>>>>>>>>>>>>>>>>>>>
+    def roomComponents = "2.4.2"
+
+//  <<<<<<<<<<<<<<<<<<<<Security>>>>>>>>>>>>>>>>>>>>
+    def sqlCipher = "4.5.1"
+    def jetpackCrypto = "1.0.0"
+    def bouncyCastle="1.68"
+    def nimBuds="8.3"
+//  <<<<<<<<<<<<<<<<<<<<Networking>>>>>>>>>>>>>>>>>>>>
+    def retrofit = "2.9.0"
+    def okHttp = "4.9.0"
+    def eitherNet = "1.2.1"
+    def tls_version = "4.10.0"
+//  <<<<<<<<<<<<<<<<<<<<Logging & Analytics>>>>>>>>>>>>>>>>>>>>
+    def timber = "5.0.1"
+
+//  <<<<<<<<<<<<<<<<<<<<Testing>>>>>>>>>>>>>>>>>>>>
+    def googleTruth = "1.1.3"
+
+    //  <<<<<<<<<<<<<<<<<<<<Dependency Injection>>>>>>>>>>>>>>>>>>>>
+    def koin_version = rootProject.koin_version
+
+    //--------------------DEP IMPL--------------------
+
+//  <<<<<<<<<<<<<<<<<<<<Core>>>>>>>>>>>>>>>>>>>>
+
+    //TODO: Finalize dep configuration for view model lib and coroutines
+
+    // AndroidX
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleComponents"
+
+    // Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineComponents"
+
+
+//  <<<<<<<<<<<<<<<<<<<<Security>>>>>>>>>>>>>>>>>>>>
+    implementation "net.zetetic:android-database-sqlcipher:$sqlCipher@aar"
+    implementation "androidx.security:security-crypto:$jetpackCrypto"
+    implementation "org.bouncycastle:bcpkix-jdk15to18:$bouncyCastle"
+    implementation "org.bouncycastle:bcprov-jdk15to18:$bouncyCastle"
+    implementation "com.nimbusds:nimbus-jose-jwt:$nimBuds"
+
+//  <<<<<<<<<<<<<<<<<<<<Networking>>>>>>>>>>>>>>>>>>>>
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp"
+    api("com.slack.eithernet:eithernet:$eitherNet")
+
+    implementation "com.squareup.okhttp3:okhttp-tls:$tls_version"
+    api("com.slack.eithernet:eithernet:$eitherNet")
+
+//  <<<<<<<<<<<<<<<<<<<<Logging & Analytics>>>>>>>>>>>>>>>>>>>>
+    implementation "com.jakewharton.timber:timber:$timber"
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //  <<<<<<<<<<<<<<<<<<<<Dependency Injection>>>>>>>>>>>>>>>>>>>>
+    api "io.insert-koin:koin-android:$koin_version"
+
+//  <<<<<<<<<<<<<<<<<<<<Testing>>>>>>>>>>>>>>>>>>>>
+
+    // Local Unit Tests
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "com.google.truth:truth:$googleTruth"
+    testImplementation(testFixtures("com.slack.eithernet:eithernet:$eitherNet"))
+}

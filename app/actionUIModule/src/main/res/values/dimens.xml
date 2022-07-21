@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="match_constraints">0dp</dimen>
+
+    <!--    Margin dimens-->
+    <dimen name="m4">4dp</dimen>
+    <dimen name="m5">5dp</dimen>
+    <dimen name="m8">8dp</dimen>
+    <dimen name="m16">16dp</dimen>
+
+    <!--    Padding dimen-->
+    <dimen name="p2">2dp</dimen>
+    <dimen name="p16">16dp</dimen>
+
+    <!--    Font dimen-->
+    <dimen name="f28">28sp</dimen>
+
+    <dimen name="dialog_width">400dp</dimen>
+    <dimen name="dialog_height">220dp</dimen>
+    <dimen name="dialog_message_margin">40dp</dimen>
+    <dimen name="btn_corner_radius">80dp</dimen>
+    <dimen name="btn_width">120dp</dimen>
+    <dimen name="btn_height">60dp</dimen>
+
+    <!--    Pin Entry-->
+    <dimen name="pinEntryFieldWidth">46dp</dimen>
+    <dimen name="pinEntryFieldHeight">46dp</dimen>
+    <dimen name="pinEntryFieldCornerRadius">12dp</dimen>
+    <dimen name="pinEntryFieldStrokeWidth">1.5dp</dimen>
+    <dimen name="maskDimen">16dp</dimen>
+
+    <!--    Question Cards-->
+    <dimen name="qcardCornerRadius">8dp</dimen>
+    <dimen name="qcardStrokeWidth">2dp</dimen>
+    <dimen name="qcardNumberBg">24dp</dimen>
+</resources>

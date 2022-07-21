@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInActive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/defaultText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnActive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/defaultText"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progressIndicator"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/white"
+        android:visibility="invisible"
+        tools:visibility="invisible" />
+
+</FrameLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    FONTS-->
+
+    <style name="Font.Headline" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:fontWeight">@dimen/w400</item>
+        <item name="android:textSize">@dimen/f24</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Font.Headline.Bold">
+        <item name="android:fontWeight">@dimen/w700</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Font.Headline.Bold.Small">
+        <item name="android:fontWeight">@dimen/w500</item>
+        <item name="android:textSize">@dimen/f16</item>
+    </style>
+
+    <style name="Font.Heading" parent="TextAppearance.AppCompat.Title">
+        <item name="android:fontWeight">@dimen/w600</item>
+        <item name="android:textSize">@dimen/f18</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Font.Subhead" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:fontWeight">@dimen/w400</item>
+        <item name="android:textSize">@dimen/f17</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Font.Body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontWeight">@dimen/w400</item>
+        <item name="android:textSize">@dimen/f16</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Font.Body.Bold">
+        <item name="android:fontWeight">@dimen/w700</item>
+    </style>
+
+    <style name="Font.BodySmall" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:fontWeight">@dimen/w400</item>
+        <item name="android:textSize">@dimen/f14</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Font.Body.Link" />
+
+    <style name="Font.Body.LabelForm">
+        <item name="android:textSize">@dimen/f13</item>
+    </style>
+
+    <style name="Font.Body.ButtonLabel">
+        <item name="android:textSize">@dimen/f12</item>
+    </style>
+
+    <style name="Font.Terms" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontWeight">@dimen/w300</item>
+        <item name="android:textSize">@dimen/f16</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+</resources>

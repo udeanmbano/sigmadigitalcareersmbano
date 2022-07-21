@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="match_constraint">0dp</dimen>
+
+<!--    Size-->
+    <dimen name="s20">20dp</dimen>
+
+<!--    Margin dimens-->
+    <dimen name="error_input_text_top">-4dp</dimen>
+
+    <dimen name="m4">4dp</dimen>
+    <dimen name="m8">8dp</dimen>
+    <dimen name="m16">16dp</dimen>
+    <dimen name="m24">24dp</dimen>
+    <dimen name="m28">28dp</dimen>
+    <dimen name="m32">32dp</dimen>
+    <dimen name="m46">46dp</dimen>
+    <dimen name="m48">48dp</dimen>
+
+<!--    Padding dimen-->
+    <dimen name="p4">4dp</dimen>
+    <dimen name="p8">8dp</dimen>
+    <dimen name="p16">16dp</dimen>
+
+    <dimen name="cardDesignPickerPadding">50dp</dimen>
+
+<!--    Font dimen-->
+    <dimen name="f12">12sp</dimen>
+    <dimen name="f13">13sp</dimen>
+    <dimen name="f14">14sp</dimen>
+    <dimen name="f16">16sp</dimen>
+    <dimen name="f17">17sp</dimen>
+    <dimen name="f18">18sp</dimen>
+    <dimen name="f24">24sp</dimen>
+
+<!--    Font weights-->
+    <dimen name="w300">300</dimen>
+    <dimen name="w400">400</dimen>
+    <dimen name="w500">500</dimen>
+    <dimen name="w600">600</dimen>
+    <dimen name="w700">700</dimen>
+</resources>

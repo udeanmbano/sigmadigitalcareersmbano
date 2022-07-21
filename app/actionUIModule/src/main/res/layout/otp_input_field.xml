@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/p16">
+
+    <com.furkanakdemir.surroundcardview.SurroundCardView
+        android:id="@+id/otpFirstDigit"
+        android:layout_width="@dimen/pinEntryFieldWidth"
+        android:layout_height="@dimen/pinEntryFieldHeight"
+        android:backgroundTint="@color/pinEntryBg"
+        app:cardCornerRadius="@dimen/pinEntryFieldCornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/otpSecondDigit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scv_color="@color/pinEntryStroke"
+        app:scv_duration="1000"
+        app:scv_startPoint="top_start"
+        app:scv_surrounded="false"
+        app:scv_width="@dimen/pinEntryFieldStrokeWidth">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="3" />
+
+    </com.furkanakdemir.surroundcardview.SurroundCardView>
+
+    <com.furkanakdemir.surroundcardview.SurroundCardView
+        android:id="@+id/otpSecondDigit"
+        android:layout_width="@dimen/pinEntryFieldWidth"
+        android:layout_height="@dimen/pinEntryFieldHeight"
+        android:backgroundTint="@color/pinEntryBg"
+        app:cardCornerRadius="@dimen/pinEntryFieldCornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/otpThirdDigit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpFirstDigit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scv_color="@color/pinEntryStroke"
+        app:scv_duration="1000"
+        app:scv_startPoint="top_start"
+        app:scv_surrounded="false"
+        app:scv_width="@dimen/pinEntryFieldStrokeWidth">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="2" />
+
+    </com.furkanakdemir.surroundcardview.SurroundCardView>
+
+    <com.furkanakdemir.surroundcardview.SurroundCardView
+        android:id="@+id/otpThirdDigit"
+        android:layout_width="@dimen/pinEntryFieldWidth"
+        android:layout_height="@dimen/pinEntryFieldHeight"
+        android:backgroundTint="@color/pinEntryBg"
+        app:cardCornerRadius="@dimen/pinEntryFieldCornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/otpLastDigit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpSecondDigit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:scv_color="@color/pinEntryStroke"
+        app:scv_duration="1000"
+        app:scv_startPoint="top_start"
+        app:scv_surrounded="false"
+        app:scv_width="@dimen/pinEntryFieldStrokeWidth">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="1" />
+
+    </com.furkanakdemir.surroundcardview.SurroundCardView>
+
+    <com.furkanakdemir.surroundcardview.SurroundCardView
+        android:id="@+id/otpLastDigit"
+        android:layout_width="@dimen/pinEntryFieldWidth"
+        android:layout_height="@dimen/pinEntryFieldHeight"
+        android:backgroundTint="@color/pinEntryBg"
+        app:cardCornerRadius="@dimen/pinEntryFieldCornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpThirdDigit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:scv_color="@color/pinEntryStroke"
+        app:scv_duration="1000"
+        app:scv_startPoint="top_start"
+        app:scv_surrounded="false"
+        app:scv_width="@dimen/pinEntryFieldStrokeWidth">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="1" />
+
+    </com.furkanakdemir.surroundcardview.SurroundCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
