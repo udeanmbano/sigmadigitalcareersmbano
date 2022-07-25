@@ -1,0 +1,109 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Eventsapp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/blue_60</item>
+        <item name="colorOnPrimary">@color/grey_background</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/blue_60</item>
+        <item name="colorOnSecondary">@color/grey_background</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+        <!-- Customize your theme here. --> </style>
+    <!--   TEXT COPY-->
+    <style name="Headline" parent="@style/Font.Headline">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Headline.Bold" parent="Font.Headline.Bold">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Headline.Bold.Small" parent="Font.Headline.Bold.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Label">
+        <item name="android:textAppearance">@style/Font.BodySmall</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="LowEmphasis" parent="Font.Body.ButtonLabel">
+        <item name="android:textColor">@color/grey_dark</item>
+    </style>
+
+    <!--   VIEWS-->
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/Font.Body.ButtonLabel</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MaterialButton.Active">
+        <item name="android:backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="MaterialButton.InActive">
+        <item name="android:backgroundTint">@color/inactive</item>
+    </style>
+
+    <style name="MaterialButton.Outline" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/Font.Body.ButtonLabel</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="MaterialTextButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/Label</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="MaterialTextButton.Active">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="MaterialTextButton.InActive">
+        <item name="android:textColor">@color/grey_100</item>
+    </style>
+
+    <style name="MaterialSwitch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="thumbTint">@color/white</item>
+    </style>
+
+    <style name="TextInputLayout" parent="@style/Widget.Design.TextInputLayout">
+        <item name="backgroundTint">@color/grey_background</item>
+        <item name="android:textColorHint">@color/mask</item>
+    </style>
+
+    <style name="Dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="backgroundTint">@color/grey_background</item>
+        <item name="android:textColorHint">@color/mask</item>
+    </style>
+
+    <style name="TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:backgroundTint">@color/mask</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextInputMsg" parent="Font.Body.ButtonLabel" />
+
+    <style name="TextInputMsg.Info">
+        <item name="android:textColor">@color/information</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_marginTop">@dimen/error_input_text_top</item>
+    </style>
+
+    <style name="TextInputMsg.Error">
+        <item name="android:textColor">@color/error</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TextViewInfo">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/f14</item>
+    </style>
+
+</resources>

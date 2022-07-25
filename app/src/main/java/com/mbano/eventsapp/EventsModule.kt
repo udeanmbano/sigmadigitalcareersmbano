@@ -1,5 +1,6 @@
 package com.mbano.eventsapp
 
+import com.mbano.core.utils.Util
 import com.mbano.core.remote.WebServicesImpl
 import com.mbano.eventsapp.ui.events.EventsViewModel
 import com.mbano.eventsapp.ui.schedule.ScheduleViewModel
@@ -10,4 +11,5 @@ val EventsModule = module {
 
     viewModel { EventsViewModel(WebServicesImpl) }
     viewModel { ScheduleViewModel(WebServicesImpl) }
+    single { Util() }
 }

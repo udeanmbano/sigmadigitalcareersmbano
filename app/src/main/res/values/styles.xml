@@ -4,9 +4,9 @@
     <!--    FONTS-->
 
     <style name="Font.Headline" parent="TextAppearance.AppCompat.Headline">
-        <item name="android:fontWeight">@dimen/w400</item>
-        <item name="android:textSize">@dimen/f24</item>
-        <item name="android:textAlignment">center</item>
+        <item name="android:fontWeight">@dimen/w600</item>
+        <item name="android:textSize">@dimen/f18</item>
+        <item name="android:textAlignment">textStart</item>
     </style>
 
     <style name="Font.Headline.Bold">
@@ -28,7 +28,7 @@
     <style name="Font.Subhead" parent="TextAppearance.AppCompat.Subhead">
         <item name="android:fontWeight">@dimen/w400</item>
         <item name="android:textSize">@dimen/f17</item>
-        <item name="android:textAlignment">center</item>
+        <item name="android:textAlignment">textStart</item>
     </style>
 
     <style name="Font.Body" parent="TextAppearance.AppCompat.Body1">

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">eventsapp</string>
+    <string name="title_home">Home</string>
+    <string name="title_events">Events</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="txtvPleaseBePatient">Please be patient while</string>
+    <string name="txtvLoading">Loading............</string>
+    <string name="default_date">Yesterday</string>
+    <string name="sub_title">Sub title</string>
+    <string name="title">Title</string>
+    <string name="video_url">Video url</string>
+</resources>

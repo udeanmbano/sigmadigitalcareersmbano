@@ -75,6 +75,8 @@ dependencies {
 
     //--------------------DEP IMPL--------------------
 
+    //--------------------Joda time--------------------
+    def joda_time = "2.9.4"
 //  <<<<<<<<<<<<<<<<<<<<Core>>>>>>>>>>>>>>>>>>>>
 
     //TODO: Finalize dep configuration for view model lib and coroutines
@@ -114,6 +116,9 @@ dependencies {
 
     //  <<<<<<<<<<<<<<<<<<<<Dependency Injection>>>>>>>>>>>>>>>>>>>>
     api "io.insert-koin:koin-android:$koin_version"
+
+    // Joda Time
+    implementation  "joda-time:joda-time:$joda_time"
 
 //  <<<<<<<<<<<<<<<<<<<<Testing>>>>>>>>>>>>>>>>>>>>
 

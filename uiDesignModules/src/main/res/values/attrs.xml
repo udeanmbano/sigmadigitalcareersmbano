@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ToggleButtonBase">
+        <attr name="activeStyle" format="reference" />
+        <attr name="text" format="string" />
+        <attr name="inactiveStyle" format="reference" />
+        <attr name="isInactiveClickable" format="boolean" />
+        <attr name="isActive" format="boolean" />
+        <attr name="textUnderline" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="ActionButton">
+        <attr name="loadingIdicatorTint" format="reference" />
+    </declare-styleable>
+</resources>
