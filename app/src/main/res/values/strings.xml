@@ -9,4 +9,10 @@
     <string name="sub_title">Sub title</string>
     <string name="title">Title</string>
     <string name="video_url">Video url</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="play">Play</string>
+    <string name="Play">Play</string>
+    <string name="default_time">0:00</string>
+    <string name="title_video">Video Player</string>
 </resources>

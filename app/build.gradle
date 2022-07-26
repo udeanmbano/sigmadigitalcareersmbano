@@ -47,8 +47,8 @@ dependencies {
     // AndroidX
     def coreKtx = "1.8.0"
     def appCompat = "1.4.1"
-    def constLayout = "2.1.3"
-    def lifecycleComponents = "2.4.1"
+    def constLayout = "2.1.4"
+    def lifecycleComponents = "2.5.0"
 
     // Coroutines
     def coroutineComponents = "1.6.0"

@@ -10,11 +10,21 @@
         android:id="@+id/navigation_events"
         android:name="com.mbano.eventsapp.ui.events.EventsFragment"
         android:label="@string/title_events"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_events">
+      <action
+        android:id="@+id/action_Event_to_VideoPage"
+        app:destination="@id/navigation_video"
+        />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_schedule"
         android:name="com.mbano.eventsapp.ui.schedule.ScheduleFragment"
         android:label="@string/title_schedule"
         tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/navigation_video"
+        android:name="com.mbano.eventsapp.ui.video.VideoFragment"
+        android:label="@string/title_video"
+        tools:layout="@layout/fragment_video" />
 </navigation>

@@ -1,6 +1,7 @@
 package com.mbano.eventsapp.ui.schedule
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -23,6 +24,8 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
     private val scheduleViewModel: ScheduleViewModel by sharedViewModel()
     private val loadingDialog = InfoDialog()
 
+    // Save state
+    var recyclerViewState: Parcelable? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
 
@@ -30,9 +33,8 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
         super.onViewCreated(view, savedInstanceState)
         showLoading()
         setUpObservers()
-
         scheduleViewModel.getScheduleData()
-    }
+         }
 
     private fun setUpObservers() {
         lifecycleScope.launch {
@@ -51,15 +53,28 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
 
     private fun showSchedules(schedules: List<ScheduleUI>) {
         with(binding) {
+
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false).apply {
-                 scheduleRecycler.layoutManager = this
+                scheduleRecycler.layoutManager = this
             }
-             ScheduleAdapter().apply {
-                  items = schedules
-                 scheduleRecycler.adapter = this
-              }
+            ScheduleAdapter().apply {
+                items = schedules
+                scheduleRecycler.adapter = this
+           }
+            recyclerViewState = scheduleRecycler.layoutManager?.onSaveInstanceState()
+            scheduleRecycler.adapter?.notifyDataSetChanged()
+            scheduleRecycler.layoutManager?.onRestoreInstanceState(recyclerViewState)
+
+            scheduleRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    recyclerViewState =
+                      scheduleRecycler.layoutManager?.onSaveInstanceState() // save recycleView state
+                }
+            })
         }
     }
+
 
     private fun showLoading() {
         val fragmentManager = requireActivity().supportFragmentManager
