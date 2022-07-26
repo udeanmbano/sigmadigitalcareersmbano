@@ -44,8 +44,8 @@ class Util {
             DateTimeFormat.forPattern("EEE hh:mma MMM d, yyyy").parseDateTime(output)
         val today = DateTime()
         val tomorrow: DateTime = today.plusDays(1)
-        val in_two_days: DateTime = today.plusDays(2)
-        val in_three_days: DateTime = today.minusDays(3)
+        val inTwoDays: DateTime = today.plusDays(2)
+        val inThreeDays: DateTime = today.plusDays(3)
 
         val timeFormatter: org.joda.time.format.DateTimeFormatter? =
             DateTimeFormat.forPattern("hh:mma")
@@ -58,9 +58,9 @@ class Util {
                     "Today , " + timeFormatter.print(dateTime)
                 } else if (dateTime.toLocalDate().equals(tomorrow.toLocalDate())) {
                     "Tomorrow , " + timeFormatter.print(dateTime)
-                } else if (dateTime.toLocalDate().equals(in_two_days.toLocalDate())) {
+                } else if (dateTime.toLocalDate().equals(inTwoDays.toLocalDate())) {
                     "In two days , " + timeFormatter.print(dateTime)
-                } else if (dateTime.toLocalDate().equals(in_three_days.toLocalDate())) {
+                } else if (dateTime.toLocalDate().equals(inThreeDays.toLocalDate())) {
                     "In three days , " + timeFormatter.print(dateTime)
                 } else {
                     normalFormatter.print(dateTime).toString()
