@@ -9,8 +9,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharedFlow
 
 interface WebServices {
-    val eventsApi: EventsApi
-    val scheduleApi: ScheduleApi
 
     val webScope: CoroutineScope
 
@@ -29,4 +27,5 @@ interface WebServices {
 
     suspend fun getEventsData(): ApiResult<List<EventResult>, Unit>
     suspend fun getScheduleData(): ApiResult<List<ScheduleResult>, Unit>
+
 }

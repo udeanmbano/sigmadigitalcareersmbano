@@ -14,8 +14,8 @@ import kotlinx.coroutines.withContext
 import org.koin.java.KoinJavaComponent.inject
 
 object WebServicesImpl : WebServices {
-    override val eventsApi: EventsApi by inject(EventsApi::class.java)
-    override val scheduleApi: ScheduleApi by inject(ScheduleApi::class.java)
+   private val eventsApi: EventsApi by inject(EventsApi::class.java)
+    private val scheduleApi: ScheduleApi by inject(ScheduleApi::class.java)
 
     override val webScope = CoroutineScope(Dispatchers.IO)
 

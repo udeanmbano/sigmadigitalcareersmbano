@@ -81,12 +81,13 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
                 scheduleRecycler.adapter?.notifyDataSetChanged()
                 if( scheduleRecycler.adapter?.itemCount!!>1) {
                     loadedFirstTime = true
-                }else{
+                } else {
 
                 }
             } else {
                ScheduleAdapter().apply {
                     items = schedules
+
                 }
                 scheduleRecycler.adapter?.notifyDataSetChanged()
             }

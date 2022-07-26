@@ -25,6 +25,7 @@ class EventsViewModel(private val webServices: WebServices) : ViewModel() {
                 is ApiResult.Failure -> {
                     // TODO: handle error
                     _eventDataResult.emit(listOf())
+
                 }
             }
         }
