@@ -23,7 +23,7 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
     private val binding by viewBinding(FragmentScheduleBinding::bind)
     private val scheduleViewModel: ScheduleViewModel by sharedViewModel()
     private val loadingDialog = InfoDialog()
-
+    private var loadedFirstTime:Boolean = false
     // Save state
     var recyclerViewState: Parcelable? = null
     // This property is only valid between onCreateView and
@@ -32,9 +32,21 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showLoading()
+        binding.scheduleRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                recyclerViewState =
+                    binding.scheduleRecycler.layoutManager?.onSaveInstanceState() // save recycleView state
+            }
+        })
+        recyclerViewState = binding.scheduleRecycler.layoutManager?.onSaveInstanceState()
+        binding.scheduleRecycler.adapter?.stateRestorationPolicy =
+            RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+        binding.scheduleRecycler.layoutManager?.onRestoreInstanceState(recyclerViewState)
         setUpObservers()
         scheduleViewModel.getScheduleData()
-         }
+
+    }
 
     private fun setUpObservers() {
         lifecycleScope.launch {
@@ -48,34 +60,38 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
         scheduleViewModel.scheduleDataResult.collectLatest {
             hideLoading()
             showSchedules(it)
+
         }
+
     }
 
     private fun showSchedules(schedules: List<ScheduleUI>) {
         with(binding) {
 
-            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false).apply {
-                scheduleRecycler.layoutManager = this
-            }
-            ScheduleAdapter().apply {
-                items = schedules
-                scheduleRecycler.adapter = this
-           }
-            recyclerViewState = scheduleRecycler.layoutManager?.onSaveInstanceState()
-            scheduleRecycler.adapter?.notifyDataSetChanged()
-            scheduleRecycler.layoutManager?.onRestoreInstanceState(recyclerViewState)
+            if (!loadedFirstTime) {
+                LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false).apply {
+                    scheduleRecycler.layoutManager = this
 
-            scheduleRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                    super.onScrollStateChanged(recyclerView, newState)
-                    recyclerViewState =
-                      scheduleRecycler.layoutManager?.onSaveInstanceState() // save recycleView state
                 }
-            })
+                ScheduleAdapter().apply {
+                    items = schedules
+                    scheduleRecycler.adapter = this
+
+                }
+                scheduleRecycler.adapter?.notifyDataSetChanged()
+                if( scheduleRecycler.adapter?.itemCount!!>1) {
+                    loadedFirstTime = true
+                }else{
+
+                }
+            } else {
+               ScheduleAdapter().apply {
+                    items = schedules
+                }
+                scheduleRecycler.adapter?.notifyDataSetChanged()
+            }
         }
     }
-
-
     private fun showLoading() {
         val fragmentManager = requireActivity().supportFragmentManager
         loadingDialog.apply {
@@ -92,6 +108,5 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
             loadingDialog.dismiss()
         }
     }
-
 
 }
